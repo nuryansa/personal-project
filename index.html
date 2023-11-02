@@ -35,6 +35,11 @@
         align-items: flex-end;
         justify-content: flex-end;
       }
+     .kotakLabel {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
     </style>
     </head>
     <body>
@@ -138,6 +143,10 @@
       <div class="chartBox">
         <!-- date input -->
         <div class="dateInput">
+            <div class="kotakLabel">
+                <p>Dari</p>
+                <p>Sampai</p>
+            </div>
           <input onchange="filterData()" type="date" id="startdate" value="2023-10-29">
           <input onchange="filterData()" type="date" id="enddate" value="2023-11-04">
         </div>
