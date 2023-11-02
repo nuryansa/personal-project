@@ -189,6 +189,11 @@ body {
     align-items: center;
     justify-content: center;
 }
+.dateInput {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
 
 /* --------- MEDIA QUERIES --------- */
 /* MEDIUM */
