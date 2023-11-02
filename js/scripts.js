@@ -93,7 +93,7 @@ function closeSidebar() {
       myChart.config.data.datasets[0].data = filterDatapoints;
 
       myChart.update();
-    }
+    };
 
 
 // BAR CHART
