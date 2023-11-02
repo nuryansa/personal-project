@@ -109,16 +109,16 @@
                     <h1>56</h1>
                 </div>
             </div>
-            <div class="charts">
-                <div class="charts-card">
-                    <h2 class="chart-title">Max Orders</h2>
-                        <div class="dateInput">
-                            <input onchange="filterData()" type="date" id="startdate" value="2023-10-29">
-                            <input onchange="filterData()" type="date" id="enddate" value="2023-11-04">
-                        </div>
-                    <div id="myChart"></div>
-                </div>
-            </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <!-- date input -->
+        <div class="dateInput">
+          <input onchange="filterData()" type="date" id="startdate" value="2023-10-29">
+          <input onchange="filterData()" type="date" id="enddate" value="2023-11-04">
+        </div>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
             <div class="charts">
                 <div class="charts-card">
                     <h2 class="chart-title">Top 5 Products</h2>
