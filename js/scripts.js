@@ -18,6 +18,84 @@ function closeSidebar() {
 }
 
 // ------- CHARTS -------
+// MY CHART
+    const dates = ['2023-10-29', '2023-10-30', '2023-10-31', '2023-11-01', '2023-11-02', '2023-11-03', '2023-11-04'];
+    const datapoints = [50, 15, 45, 25, 40, 10, 35];
+    const data = {
+      labels: dates,
+      datasets: [{
+        tension: 0.5,
+        fill: true,
+        label: 'Graph Test',
+        data: datapoints,
+        backgroundColor: [
+          // 'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          // 'rgba(255, 206, 86, 0.2)',
+          // 'rgba(75, 192, 192, 0.2)',
+          // 'rgba(153, 102, 255, 0.2)',
+          // 'rgba(255, 159, 64, 0.2)',
+          // 'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          // 'rgba(255, 26, 104, 1)',
+          // 'rgba(54, 162, 235, 1)',
+          // 'rgba(255, 206, 86, 1)',
+          // 'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          // 'rgba(255, 159, 64, 1)',
+          // 'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'line',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    function filterData() {
+      const dates2 = [...dates];
+      // console.log(dates2);
+      const startdate = document.getElementById('startdate');
+      const enddate = document.getElementById('enddate');
+
+      // get the index number in array
+      const indexstartdate = dates2.indexOf(startdate.value);
+      const indexenddate = dates2.indexOf(enddate.value);
+      // console.log(indexstartdate);
+
+      // slice the array (pie) only showing the selected section / slice
+      const filterDate = dates2.slice(indexstartdate, indexenddate + 1);
+
+      // replace the labels in the chart
+      myChart.config.data.labels = filterDate;
+
+      // datapoints
+      const datapoints2 = [...datapoints];
+      const filterDatapoints = datapoints2.slice(indexstartdate, indexenddate + 1);
+      
+      myChart.config.data.datasets[0].data = filterDatapoints;
+
+      myChart.update();
+    }
+
+
 // BAR CHART
 var barChartOptions = {
     series: [{
